@@ -95,7 +95,7 @@ from the static constructor (but see limitations below).
 
 quickvm can work with (and print) all primitive values (booleans, chars and
 integers), plus strings, arrays and some common containers like `ArrayList`.
-Booleans and chars are printed as integrers. Example:
+Booleans and chars are printed as integers. Example:
 
 ~~~
 Lde/greenrobot/event/util/h;->b:Z = 1
@@ -123,7 +123,7 @@ most of them. Constants will be saved to `constants.txt`.
 
 If quickvm fails on most classes, it's probably because of some
 instruction or API call that the obfuscator likes to use and is not implemented.
-It should be implemented in `Ops.java` or `Methods.java` respectively.
+It should be implemented in `Ops.java` and `Methods.java` respectively.
 
 If most classes complete without errors (quickvm just moves to the next one)
 then good news! Even if some classes still fail, decryption is usually performed
@@ -133,7 +133,7 @@ and printed already. However, reviewing those classes manually is still a good i
 
 ### Big codebases
 
-When running this at big codebases (500+ classes), it's a good idea to skip loading
+When running this at big codebases (500+ classes), it's better to skip loading
 classes you don't care about, such as support library, google, etc. It's also better
 to log the error stream as well, so we can review the errors later.
 
